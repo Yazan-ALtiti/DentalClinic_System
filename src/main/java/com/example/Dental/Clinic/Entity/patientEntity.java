@@ -29,6 +29,11 @@ public class patientEntity {
     @OneToMany(mappedBy = "patient")
     List<historyEntity> histories;
 
+    @OneToMany(mappedBy = "payment_id")
+    List<paymentsEntity>payments;
+
+
+
 
 
 
