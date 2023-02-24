@@ -1,8 +1,10 @@
 package com.example.Dental.Clinic.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -22,6 +24,12 @@ public class patientEntity {
     String partner;
     @NonNull
     String phone;
+    @NonNull
+    int dayOfPay;
+    @NonNull
+    LocalDate dateOfNextVisit;
+    @NonNull
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name ="doctor_id")
     doctorEntity doctor;
@@ -29,7 +37,7 @@ public class patientEntity {
     @OneToMany(mappedBy = "patient")
     List<historyEntity> histories;
 
-    @OneToMany(mappedBy = "payment_id")
+    @OneToMany(mappedBy = "patient")
     List<paymentsEntity>payments;
 
 

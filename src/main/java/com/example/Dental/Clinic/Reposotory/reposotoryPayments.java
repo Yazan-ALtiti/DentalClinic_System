@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface reposotoryPayments extends JpaRepository<paymentsEntity,Long> {
-    paymentsEntity findByname(String name);
-    patientEntity findByphone(String phone);
+    paymentsEntity findByvalue(String name);
 }

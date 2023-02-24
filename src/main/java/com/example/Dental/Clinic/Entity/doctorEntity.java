@@ -20,9 +20,13 @@ public class doctorEntity {
     @NonNull
     String name;
     @NonNull
-    String salary;
+    int salary;
     @NonNull
     String phone;
     @OneToMany(mappedBy = "doctor")
     List<patientEntity> patient;
+
+
+
 }
+

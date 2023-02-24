@@ -1,8 +1,10 @@
 package com.example.Dental.Clinic.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -15,15 +17,14 @@ public class paymentsEntity {
     @GeneratedValue
     Long id;
     @NonNull
-    String name;
+    int value;
     @NonNull
-    String phone;
+    LocalDate date;
     @NonNull
-    Date date;
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name ="patient_id")
-    doctorEntity patient;
+    patientEntity patient;
 
 
 }
